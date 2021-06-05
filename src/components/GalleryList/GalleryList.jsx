@@ -13,7 +13,7 @@ function GalleryList({galleryList, getGalleryList}) {
         // checking that galleryList is in component
                 console.log('GalleryList is ', galleryList)
                 return(
-                    <GalleryItem path={picture.path} />
+                    <GalleryItem path={picture.path} picture={picture} getGalleryList={getGalleryList}/>
                 )
             })}
         </div>
