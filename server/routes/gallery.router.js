@@ -17,7 +17,9 @@ router.put('/like/:id', (req, res) => {
 }); // END PUT Route
 
 // GET Route
+// 3. Trigger roter.get
 router.get('/', (req, res) => {
+// 4. send back galleryItems
     res.send(galleryItems);
 }); // END GET Route
 
