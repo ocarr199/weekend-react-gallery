@@ -26,6 +26,12 @@ console.log(showDescription)
     return (
         // Each gallery Item
         <div className="pictureContainer">
+            <h3>{picture.title}</h3>
+             {picture.likes == 1 ? (
+               <p>{picture.likes} Like</p>
+            ) : (
+                <p>{picture.likes} Likes</p>
+            )}
             {showDescription ? (
                 <div className="content description">
                     <p onClick={() => setShowDescription(!showDescription)}>{picture.description}</p>
@@ -35,9 +41,10 @@ console.log(showDescription)
     {console.log(path)}
                 {/* using path as image source to get each photo */}
                 <img src={path} alt="" onClick={() => setShowDescription(!showDescription)} />
+                
                 </div>
             )}
-            <button  onClick={handleLike}>like: {picture.likes}</button>
+            <button  onClick={handleLike}>like </button>
             </div>
     );
 };
