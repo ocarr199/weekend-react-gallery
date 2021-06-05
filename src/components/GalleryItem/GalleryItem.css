@@ -1,3 +1,33 @@
 img{
+    max-height: 270px;
+    max-width: 270px;
+}
+.pictureContainer{
+    height: 330px;
+    width: 300px;
+    background-color: antiquewhite;
+    padding: 50px;
+    margin: 25px;
+    border-style: solid;
+    float: left;
+
+}
+.content{
     height: 300px;
+    width:300px;
+padding-top: 25px;
+    background-color: aquamarine;
+border-style: solid;
+}
+.description{
+    height: 225px;
+    padding-top: 100px;
+    background-color: aquamarine;
+}
+button{
+    margin: 10px;
+	background: #ed3330;
+	padding: 10px;
+	border-radius: 5px;
+    border-style: none;
 }

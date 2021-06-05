@@ -25,20 +25,19 @@ function GalleryItem({path, picture, getGalleryList}) {
 console.log(showDescription)
     return (
         // Each gallery Item
-        <div>
+        <div className="pictureContainer">
             {showDescription ? (
-                <div>
+                <div className="content description">
                     <p onClick={() => setShowDescription(!showDescription)}>{picture.description}</p>
                 </div>
             ) : (
-                <div>
+                <div className="content">
     {console.log(path)}
-                <p>gallery item</p>
                 {/* using path as image source to get each photo */}
                 <img src={path} alt="" onClick={() => setShowDescription(!showDescription)} />
                 </div>
             )}
-            <button onClick={handleLike}>like: {picture.likes}</button>
+            <button  onClick={handleLike}>like: {picture.likes}</button>
             </div>
     );
 };
