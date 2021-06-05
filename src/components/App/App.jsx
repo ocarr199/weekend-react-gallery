@@ -14,11 +14,16 @@ const[galleryList, setGalleryList] = useState([])
 
 // Ran on page Load...
 const getGalleryList = ()=> {
-    console.log('get triggered')
+    console.log('getGalleryList triggered')
   //  2. finds get request in the server
     axios.get('/gallery').then(response => {
         // 5. save the data in the galleryList state
+        // response.data is the objects in the array
+        console.log('got gallery list from server', response.data)
+        // setting galleryList variable to response.data
         setGalleryList(response.data)
+        // checking that line above works
+        console.log('galleryList is now', galleryList)
     }).catch(err => {
         console.error(err)
     })
@@ -31,7 +36,7 @@ const getGalleryList = ()=> {
         </header>
         <p>Gallery goes here</p>
         {/* 8. GalleryList recieves data through props */}
-        <GalleryList gallery={galleryList} getGalleryList={getGalleryList} />
+        <GalleryList galleryList={galleryList} getGalleryList={getGalleryList} />
         <img src="images/goat_small.jpg"/>
       </div>
     );
