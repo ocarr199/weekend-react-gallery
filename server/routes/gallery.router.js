@@ -41,4 +41,26 @@ router.get('/', (req, res) => {
     })
 }); // END GET Route
 
+// POST Route
+router.post('/', (req, res) => {
+    //destructure keys out of req.body
+    const {title, path, description} = req.body;
+
+
+    const queryText = `
+        INSERT INTO "galleryItems" (title, path, description)
+        VALUES ($1, $2, $3);
+    `
+    const values = [title, path, description];
+    pool.query(queryText, values)
+    .then(result => {
+        res.sendStatus(201)
+    }).catch(err => {
+        console.error(err)
+        res.sendStatus(500);
+    })
+
+})
+// End POST Route
+
 module.exports = router;
