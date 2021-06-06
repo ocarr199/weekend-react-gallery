@@ -1,5 +1,6 @@
 // import GalleryItem from GalleryItem component
 import GalleryItem from '../GalleryItem/GalleryItem'
+import './GalleryList.css';
 //9.  bringing in GalleryList variable and getGalleryList function 
 // from App.jsx through props
 function GalleryList({ galleryList, getGalleryList }) {

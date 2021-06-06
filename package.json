@@ -4,6 +4,8 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
     "@uppy/core": "^1.19.1",
     "@uppy/dashboard": "^1.20.1",
     "@uppy/webcam": "^1.8.11",

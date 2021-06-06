@@ -1,33 +1,31 @@
 img{
     max-height: 270px;
     max-width: 270px;
+
+    border-style: inset;
 }
 .pictureContainer{
+    border-radius: 8px;
     height: 330px;
     width: 300px;
-    background-color: antiquewhite;
-    padding: 0px 30px 145px 30px;
+    background-color: #9ba4b4;
+    padding: 0px 30px 160px 30px;
     margin: 35px;
     border-style: solid;
     float: left;
 
 }
 .content{
+    border-radius: 8px;
     height: 300px;
     width:300px;
 padding-top: 25px;
-    background-color: aquamarine;
+background-color: #a1cae2;
 border-style: solid;
 }
 .description{
     height: 225px;
     padding-top: 100px;
-    background-color: aquamarine;
-}
-button{
-    margin: 10px;
-	background: #ed3330;
-	padding: 10px;
-	border-radius: 5px;
-    border-style: none;
+    background-color: #a1cae2;
+    font-size: 1.5em
 }

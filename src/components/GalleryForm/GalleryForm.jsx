@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
+import IconButton from '@material-ui/core/IconButton';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import TextField from '@material-ui/core/TextField';
 
 function GalleryForm({ getGalleryList }) {
 
@@ -43,22 +46,30 @@ function GalleryForm({ getGalleryList }) {
         <>
             <form onSubmit={handleSubmit}>
                 {/* inputs to create newPost object with */}
-                <input
+                <TextField
+                    id="outlined-basic"
+                    variant="outlined"
                     value={titleInput}
                     onChange={(event) => setTitleInput(event.target.value)}
                     placeholder="Photo Title"
                 />
-                <input
+                <TextField
+                 id="outlined-basic"
+                 variant="outlined"
                     value={pathInput}
                     onChange={(event) => setPathInput(event.target.value)}
                     placeholder="Image URL"
                 />
-                <input
+                <TextField
+                    id="outlined-basic"
+                    variant="outlined"
                     value={descriptionInput}
                     onChange={(event) => setDescriptionInput(event.target.value)}
                     placeholder="description"
                 />
-                <button type='submit'>Add Post!</button>
+                <IconButton type='submit' aria-label="upload">
+                <CloudUploadIcon />
+                </IconButton>
             </form>
         </>
     )
