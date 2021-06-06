@@ -45,8 +45,6 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     //destructure keys out of req.body
     const {title, path, description} = req.body;
-
-
     const queryText = `
         INSERT INTO "galleryItems" (title, path, description)
         VALUES ($1, $2, $3);
@@ -62,5 +60,20 @@ router.post('/', (req, res) => {
 
 })
 // End POST Route
+
+// Delete Route
+router.delete('/:id', (req, res) => {
+    //22. Send query with id to DB
+    const deleteID = req.params.id
+    const queryText = `DELETE FROM "galleryItems" WHERE "id" = $1;`
+    pool.query(queryText, [deleteID])
+    .then(result => {
+        res.sendStatus(204)
+    }).catch(err => {
+        console.error(err)
+        res.sendStatus(500);
+    })
+})
+// End Delete Route
 
 module.exports = router;

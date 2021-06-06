@@ -20,6 +20,17 @@ function GalleryItem({path, picture, getGalleryList, galleryList}) {
         })
     }
 
+    const handleDelete = () => {
+        console.log(picture);
+        axios.delete(`/gallery/${picture.id}`)
+        .then(response => {
+            console.log(response);
+            getGalleryList();
+        }).catch(err => {
+            console.log(err)
+        })
+    }
+
 console.log(showDescription)
     return (
         // Each gallery Item
@@ -42,7 +53,7 @@ console.log(showDescription)
                 
                 </div>
             )}
-            <button  onClick={handleLike}>like </button>
+            <button  onClick={handleLike}>like </button><button  onClick={handleDelete}>Delete </button>
             </div>
     );
 };
