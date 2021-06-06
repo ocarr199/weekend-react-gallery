@@ -9,11 +9,11 @@ function GalleryList({galleryList, getGalleryList}) {
         <div>
             {/* div to render in App.jsx */}
             {/* loop through galleryList */}
+            {/*  checking that galleryList is in component */}
+            {console.log('GalleryList is ', galleryList)}
             {galleryList.map(picture => {
-        // checking that galleryList is in component
-                console.log('GalleryList is ', galleryList)
                 return(
-                    <GalleryItem path={picture.path} picture={picture} getGalleryList={getGalleryList}/>
+                    <GalleryItem path={picture.path} picture={picture} getGalleryList={getGalleryList} galleryList={galleryList}/>
                 )
             })}
         </div>

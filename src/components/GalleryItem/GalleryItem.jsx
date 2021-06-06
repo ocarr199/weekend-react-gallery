@@ -3,17 +3,15 @@ import { useState } from 'react';
 import axios from 'axios'
 import './GalleryItem.css'
 // accessing the src of each photo
-function GalleryItem({path, picture, getGalleryList}) {
+function GalleryItem({path, picture, getGalleryList, galleryList}) {
 
     const[showDescription, setShowDescription] = useState(false)
 
     const handleLike = () => {
         console.log(picture.likes)
-  
-        axios.put(`gallery/like/${picture.id}`)
-            
+        console.log('galleryList is in the put', galleryList)
+        axios.put(`gallery/like/${picture.id}`, galleryList)
         .then(response => {
-
             console.log(response);
             // 19. Trigger GET from props, flow change, go to 2
             getGalleryList();
