@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const pool =require('../modules/pool')
 const galleryItems = require('../modules/gallery.data');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
@@ -19,8 +20,18 @@ router.put('/like/:id', (req, res) => {
 // GET Route
 // 3. Trigger roter.get
 router.get('/', (req, res) => {
-// 4. send back galleryItems
-    res.send(galleryItems);
+    console.log("got to router")
+    // 3. Server Get is triggered
+    const queryText = `SELECT * FROM "galleryItems" ORDER BY "id";`
+    // 4. SQL is Queried
+    pool.query(queryText)
+    .then(result => {
+        // 5. Send Back Query Rows
+        res.send(result.rows)
+    }).catch(err => {
+        console.error(err)
+        res.sendStatus(500);
+    })
 }); // END GET Route
 
 module.exports = router;

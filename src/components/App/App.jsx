@@ -16,7 +16,8 @@ const[galleryList, setGalleryList] = useState([])
 const getGalleryList = ()=> {
     console.log('getGalleryList triggered')
   //  2. finds get request in the server
-    axios.get('/gallery').then(response => {
+    axios.get('/gallery')
+    .then(response => {
         // 5. save the data in the galleryList state
         // response.data is the objects in the array
         console.log('got gallery list from server', response.data)
@@ -25,7 +26,7 @@ const getGalleryList = ()=> {
         // checking that line above works
         console.log('galleryList is now', galleryList)
     }).catch(err => {
-        console.error(err)
+        console.error("failed", err)
     })
 } 
 //7. State changed, rerender

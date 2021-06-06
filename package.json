@@ -4,9 +4,14 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
+    "@uppy/core": "^1.19.1",
+    "@uppy/dashboard": "^1.20.1",
+    "@uppy/webcam": "^1.8.11",
+    "@uppy/xhr-upload": "^1.7.4",
     "axios": "^0.19.2",
     "bootstrap": "^5.0.1",
     "express": "^4.17.1",
+    "pg": "^8.6.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "^4.0.1"
