@@ -2,9 +2,9 @@
 CREATE TABLE "galleryItems" (
 	"id" SERIAL PRIMARY KEY,
 	 "title"VARCHAR(30) NOT NULL,
-	"path" VARCHAR(600) NOT NULL,
+	"path" VARCHAR(2000) NOT NULL,
 	"description" VARCHAR(600) NOT NULL,
-	"likes" INT default 0
+	"likes" INT DEFAULT 0
 );
 
 INSERT INTO "galleryItems" (title, path, description)
